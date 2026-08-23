@@ -1,13 +1,18 @@
 class Solution(object):
     def isArmstrong(self,n):
         copy = n
+        copy2 =n
         total = 0
-        nod = len(str(n))
+        count=0
+        while copy>0:
+            copy//=10
+            count+=1 
+
         while n>0:
             d = n%10
-            total = total + (d**nod)
+            total = total + (d**count)
             n//=10
-        if total == copy:
+        if total == copy2:
             return True
         else:
             return False
